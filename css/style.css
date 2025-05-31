@@ -253,15 +253,15 @@ ol {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content:  space-around;
+  justify-content: space-around;
 }
 
-.arbusto-fundo{
+.arbusto-fundo {
   position: absolute;
   z-index: -1;
 }
 
-.perfil{
+.perfil {
   background-color: var(--color-green-light);
   width: 20%;
   padding: 4rem;
@@ -269,100 +269,135 @@ ol {
   border-radius: var(--spacing-25);
 }
 
-.img-perfil{
+.img-perfil {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
-.perfil-nome{
+.perfil-nome {
   padding: 3rem;
   text-align: center;
 }
-.insignia{
+.insignia {
   position: absolute;
   top: 20rem;
 }
-.podio{
+.podio {
   background-color: var(--color-light);
   height: 33.5vh;
   border-radius: var(--spacing-25);
 
-  & header{
+  & header {
     background-color: var(--color-blue);
-    border-radius: var(--spacing-25) var(--spacing-25) 0 0 
+    border-radius: var(--spacing-25) var(--spacing-25) 0 0;
   }
 
-  & .nav-podio{
+  & .nav-podio {
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: space-around;
     padding: 1rem;
-    
-    & a{
+
+    & a {
       color: var(--color-light);
     }
   }
 }
-.suasmissões{
+.suasmissões {
   display: flex;
   flex-direction: column;
   width: 40%;
-  height: 60vh;
 
-  & h2{
-   color: var(--color-light);
-   font-size: 3rem;
-  }
-}
-
-.todosquizes{
-display: flex;
-justify-content: space-between;
-}
-
-.quiz{
-  display: flex;
-  flex-direction: column;
-  background-color: var(--color-blue);
-  width: 45%;
-  height: 50vh;
-  border-radius: var(--spacing-25);
-  padding-bottom: 5rem;
-
-  & img{
-    height: 27.5vh;
-    border-radius: var(--spacing-25) var(--spacing-25) 0 0 
-  }
-
-}
-.quiz-text{
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  text-align: center;
-  padding: 1rem;
-  height: 27vh;
-  gap: var(--spacing-20);
-  padding-top: var(--spacing-25);
-  
-
-  & h3,p{
+  & .titulo-missao{
     color: var(--color-light);
+    font-size: 3rem;
+    padding: var(--spacing-25);
   }
 }
-.quiz-button {
-  background-color: var(--color-light);
-  color: var(--color-blue);
-  padding: var(--spacing-15);
-  border-radius: var(--spacing-15);
-  cursor: pointer;
-  font-size: 2rem;
-  border: none;
+
+.todosquizes {
+  display: flex;
+  justify-content: space-between;
 }
 
+.quiz {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-light);
+  height: 62vh;
+  border-radius: var(--spacing-25);
+  padding: 4rem;
+
+}
+.quiz-diario{
+  background-color: var(--color-blue);
+  color: var(--color-light);
+  border-radius: 5rem;
+  width: 25%;
+  padding: 1.3rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.alternativas{
+  & p{
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-25);
+  }
+  & form{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-25);
+
+    & label{
+      font-size: 1.8rem;
+    }
+    & div{
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-15);
+
+
+    }
+    & input{
+      height: 4rem;
+      width: 4rem;
+      color: var(--color-blue);
+    }
+    .btn-alternativas{
+      width: 15%;
+      height: 5vh;
+      border-radius: var(--spacing-25);
+      background-color: var(--color-blue);
+      font-size:var(--spacing-20);
+      color: var(--color-light);
+      border: none;
+
+    }
+
+  }
+}
+.btn-desafios{
+  position: relative;
+  left: 49rem;
+  width: 30%;
+  height: 5vh;
+  border-radius: var(--spacing-25);
+  background-color: var(--color-blue);
+  font-size:var(--spacing-20);
+  margin: var(--spacing-25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  & p{
+    color: var(--color-light);
+    font-weight: 500;
+  }
+
+}
 /* --------------------------------------------------------------------------- Participar ---------------------------------------------------------------------------*/
 
 .participar {
@@ -444,7 +479,6 @@ justify-content: space-between;
       }
     }
   }
-
 }
 .submit-button {
   background-color: var(--color-orange);
@@ -480,7 +514,7 @@ justify-content: space-between;
   left: 0;
 }
 
-.centro{
+.centro {
   right: 0;
 }
 
