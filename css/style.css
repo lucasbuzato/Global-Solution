@@ -245,6 +245,123 @@ ol {
 .icone {
   width: 15%;
 }
+/* --------------------------------------------------------------------------- Jogo ---------------------------------------------------------------------------*/
+.jogo {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:  space-around;
+}
+
+.arbusto-fundo{
+  position: absolute;
+  z-index: -1;
+}
+
+.perfil{
+  background-color: var(--color-green-light);
+  width: 20%;
+  padding: 4rem;
+  height: 80vh;
+  border-radius: var(--spacing-25);
+}
+
+.img-perfil{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.perfil-nome{
+  padding: 3rem;
+  text-align: center;
+}
+.insignia{
+  position: absolute;
+  top: 20rem;
+}
+.podio{
+  background-color: var(--color-light);
+  height: 33.5vh;
+  border-radius: var(--spacing-25);
+
+  & header{
+    background-color: var(--color-blue);
+    border-radius: var(--spacing-25) var(--spacing-25) 0 0 
+  }
+
+  & .nav-podio{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    
+    & a{
+      color: var(--color-light);
+    }
+  }
+}
+.suasmissões{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 60vh;
+
+  & h2{
+   color: var(--color-light);
+   font-size: 3rem;
+  }
+}
+
+.todosquizes{
+display: flex;
+justify-content: space-between;
+}
+
+.quiz{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-blue);
+  width: 45%;
+  height: 50vh;
+  border-radius: var(--spacing-25);
+  padding-bottom: 5rem;
+
+  & img{
+    height: 27.5vh;
+    border-radius: var(--spacing-25) var(--spacing-25) 0 0 
+  }
+
+}
+.quiz-text{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  height: 27vh;
+  gap: var(--spacing-20);
+  padding-top: var(--spacing-25);
+  
+
+  & h3,p{
+    color: var(--color-light);
+  }
+}
+.quiz-button {
+  background-color: var(--color-light);
+  color: var(--color-blue);
+  padding: var(--spacing-15);
+  border-radius: var(--spacing-15);
+  cursor: pointer;
+  font-size: 2rem;
+  border: none;
+}
 
 /* --------------------------------------------------------------------------- Participar ---------------------------------------------------------------------------*/
 
@@ -328,16 +445,16 @@ ol {
     }
   }
 
-  & .submit-button {
-    background-color: var(--color-orange);
-    color: var(--color-light);
-    padding: var(--spacing-15);
-    border-radius: var(--spacing-15);
-    cursor: pointer;
-    font-size: 1.8rem;
-    border: none;
-    transition: 0.5s;
-  }
+}
+.submit-button {
+  background-color: var(--color-orange);
+  color: var(--color-light);
+  padding: var(--spacing-15);
+  border-radius: var(--spacing-15);
+  cursor: pointer;
+  font-size: 1.8rem;
+  border: none;
+  transition: 0.5s;
 }
 
 /* --------------------------------------------------------------------------- Posições ---------------------------------------------------------------------------*/
@@ -361,6 +478,10 @@ ol {
 .topo-esquerda {
   top: 0;
   left: 0;
+}
+
+.centro{
+  right: 0;
 }
 
 /* --------------------------------------------------------------------------- Resposivo ---------------------------------------------------------------------------*/
