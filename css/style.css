@@ -603,7 +603,7 @@ ol {
 @media (width <= 820px) {
   .perfil{
     width: 60%;
-    height: 70vh;
+    height: 85vh;
   }
   .alternativas{
 
@@ -611,12 +611,12 @@ ol {
       gap: 1rem;
     }
     & p{
-      font-size: 2.4rem;
+      font-size: 1.6rem;
     }
 
     & div{
       & label{
-        font-size: 2.4rem;
+        font-size: 1.6rem;
       }
     }
   }
