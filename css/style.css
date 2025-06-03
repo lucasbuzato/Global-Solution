@@ -71,10 +71,6 @@ ol {
 .hero {
   width: 100%;
   min-height: 100dvh;
-  background-image: url(../img/Hero.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50%;
 }
 
 .header-hero {
@@ -97,8 +93,14 @@ ol {
   display: flex;
   gap: var(--spacing-25);
 }
+.nuvem{
+  position: absolute;
+  width: 100%;
 
+  top: 0;
+}
 .content-hero {
+  position: relative;
   width: 100%;
   height: 90dvh;
   color: var(--color-light);
@@ -633,6 +635,9 @@ ol {
   }
 }
 @media (width <= 820px) {
+  .header-hero {
+    justify-content: center;
+  }
   .perfil{
     width: 60%;
     height: 85vh;
