@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Por favor, selecione uma alternativa.");
       return;
     } else if (selecionado.value === respostaCorreta) {
-      alert("Resposta correta! Parabens você ganhou +10 Pontos.");
+      alert("Resposta correta! A crise climática está intensificando desastres como secas, enchentes e furacões, forçando milhões a deixarem suas casas e se tornarem refugiados climáticos. Parabens você ganhou +10 Pontos.");
     } else {
       alert("Resposta incorreta. Tente novamente!");
     }
