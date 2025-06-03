@@ -1,5 +1,6 @@
+// ------------------------------------------------------------------------ Quiz ------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector("form");
+  let form = document.querySelector("form");
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -10,96 +11,83 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!selecionado) {
       alert("Por favor, selecione uma alternativa.");
       return;
-    }
-
-    if (selecionado.value === respostaCorreta) {
-      alert(
-        "Resposta correta! Parabens você ganhou +10 Pontos."
-      );
+    } else if (selecionado.value === respostaCorreta) {
+      alert("Resposta correta! Parabens você ganhou +10 Pontos.");
     } else {
       alert("Resposta incorreta. Tente novamente!");
     }
   });
-});
 
-const pessoas = [
-  {
-    nome: "Paula",
-    posicao: 4,
-    pontos: 50,
-    insignia: "bronze",
-    foto: "../img/Group 79.png"
-  },
-  {
-    nome: "Maluf",
-    posicao: 3,
-    pontos: 635,
-    insignia: "prata",
-    foto: "../img/Group 80.png"
-  },
-  {
-    nome: "Éder",
-    posicao: 2,
-    pontos: 850,
-    insignia: "prata",
-    foto: "../img/Group 81.png"
-  },
-  {
-    nome: "Israel",
-    posicao: 1,
-    pontos: 999,
-    insignia: "ouro",
-    foto: "../img/Group 82.png"
-  }
-];
+  // ------------------------------------------------------------------------ Podio ------------------------------------------------------------------------
 
-const insignias = {
-  ouro: "../img/Group 78.png",
-  prata: "../img/Group.png",
-  bronze: "../img/Group 75.png"
-};
+  class Pessoa {
+    constructor(nome, posicao, pontos, insignia, foto) {
+      this.nome = nome;
+      this.posicao = posicao;
+      this.pontos = pontos;
+      this.insignia = insignia;
+      this.foto = foto;
+    }
 
-const lista = document.getElementById('lista-podio');
-const botoes = document.querySelectorAll('.nav-podio a');
-
-function renderizarPodio(filtro = null) {
-  lista.innerHTML = "";
-
-  let pessoasFiltradas = filtro
-    ? pessoas.filter(p => p.insignia === filtro)
-    : pessoas;
-
-  pessoasFiltradas.sort((a, b) => a.posicao - b.posicao);
-
-  pessoasFiltradas.forEach(p => {
-    const item = document.createElement('div');
-    item.className = 'pessoa';
-
-    item.innerHTML = `
-      <div class="info">
-        <div class="avatar">
-          <img src="${p.foto}" alt="Foto de ${p.nome}">
+    gerarHTML(insignias) {
+      return `
+      <div class="pessoa">
+        <div class="info">
+          <div class="avatar">
+            <img src="${this.foto}" alt="Foto de ${this.nome}">
+          </div>
+          <div class="detalhes">
+            <strong>${this.posicao}º. ${this.nome}</strong>
+            <span>Pontos: ${this.pontos}/1000</span>
+          </div>
         </div>
-        <div class="detalhes">
-          <strong>${p.posicao}º. ${p.nome}</strong>
-          <span>Pontos: ${p.pontos}/1000</span>
+        <div class="insignias">
+          <img src="${
+            insignias[this.insignia]
+          }" alt="Insígnia ${this.insignia}">
         </div>
-      </div>
-      <div class="insignias">
-        <img src="${insignias[p.insignia]}" alt="Insígnia ${p.insignia}">
       </div>
     `;
+    }
+  }
 
-    lista.appendChild(item);
-  });
-}
+  const insignias = {
+    ouro: "../img/Group 78.png",
+    prata: "../img/Group.png",
+    bronze: "../img/Group 75.png",
+  };
 
-botoes.forEach(botao => {
-  botao.addEventListener('click', (e) => {
-    e.preventDefault();
-    const filtro = botao.dataset.filtro;
-    renderizarPodio(filtro);
+  const pessoas = [
+    new Pessoa("Paula", 4, 50, "bronze", "../img/Group 79.png"),
+    new Pessoa("Maluf", 3, 635, "prata", "../img/Group 80.png"),
+    new Pessoa("Éder", 2, 850, "prata", "../img/Group 81.png"),
+    new Pessoa("Israel", 1, 999, "ouro", "../img/Group 82.png"),
+  ];
+
+  const lista = document.getElementById("lista-podio");
+  const botoes = document.querySelectorAll(".nav-podio a");
+
+  function renderizarPodio(filtro = null) {
+    lista.innerHTML = "";
+
+    let pessoasFiltradas = filtro
+      ? pessoas.filter((p) => p.insignia === filtro)
+      : pessoas;
+
+    pessoasFiltradas.sort((a, b) => a.posicao - b.posicao);
+
+    pessoasFiltradas.forEach((p) => {
+      lista.innerHTML += p.gerarHTML(insignias);
+    });
+  }
+
+  botoes.forEach((botao) => {
+    botao.addEventListener("click", (e) => {
+      e.preventDefault();
+      const filtro = botao.dataset.filtro;
+      renderizarPodio(filtro);
+    });
   });
+
+  renderizarPodio();
 });
-
-renderizarPodio();
