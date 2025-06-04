@@ -528,7 +528,35 @@ ol {
   border: none;
   transition: 0.5s;
 }
+/* --------------------------------------------------------------------------- Footer ---------------------------------------------------------------------------*/
+footer{
+  min-height: 10rem;
+  padding: 1rem 5rem;
+  border-top: solid 4px var(--color-light) ;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
 
+
+.column{
+  display: flex;
+  flex-direction: column;
+
+  & h3{
+    color: var(--color-light);
+  }
+}
+
+.row{
+  display: flex;
+  gap: var(--spacing-25);
+
+  & p{
+    color: var(--color-light);
+  }
+}
 /* --------------------------------------------------------------------------- Posições ---------------------------------------------------------------------------*/
 
 .passarinho {
@@ -632,6 +660,11 @@ ol {
   .btn-desafios{
     width: 50%;
     left: 0;
+  }
+  footer{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-25);
   }
 }
 @media (width <= 820px) {
