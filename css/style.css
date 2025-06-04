@@ -741,6 +741,10 @@ footer{
   .header-hero {
     justify-content: center;
   }
+  .quiz{
+    min-width: 30rem;
+    min-height: 75rem;
+  }
   .card-acao {
     max-width: 35rem;
     min-width: 35rem;
