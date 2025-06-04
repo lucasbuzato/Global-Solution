@@ -638,6 +638,17 @@ ol {
   .header-hero {
     justify-content: center;
   }
+
+  .nav{
+    & a{
+
+      & li{
+        font-size: 1.6rem;
+      }
+
+    }
+
+  }
   .perfil{
     width: 60%;
     height: 85vh;
@@ -674,12 +685,14 @@ ol {
 
 @media (width <= 430px) {
   .content-hero {
+
     & h2 {
-      font-size: 9vmin;
+      font-size: 7vmin;
     }
 
     & h3 {
-      font-size: 7vmin;
+      font-size: 5vmin;
+      width: 100%;
     }
   }
 
