@@ -166,7 +166,7 @@ ol {
 
 .arbusto-baixo {
   position: absolute;
-  z-index: 1;
+  z-index: -1;
   height: 77.3vh;
 }
 .site-content {
@@ -220,12 +220,15 @@ ol {
   flex-wrap: wrap;
 }
 .card-acao {
-  max-width: 30%;
+  width: 45%;
+  max-width: 50rem;
+  min-width: 50rem;
   height: 30vh;
+  min-height: 28rem;
   background-color: var(--color-light);
   border-radius: var(--spacing-25);
   padding: var(--spacing-25);
-  display: flex;
+  display: inline-block;
   flex-direction: column;
   justify-content: center;
 
@@ -266,8 +269,10 @@ ol {
 .perfil {
   background-color: var(--color-green-light);
   width: 20%;
+  min-width: 35rem;
   padding: 4rem;
   height: 80vh;
+  min-height: 80rem;
   border-radius: var(--spacing-25);
 }
 
@@ -288,6 +293,7 @@ ol {
 .podio {
   background-color: var(--color-light);
   height: 33.5vh;
+  min-height: 35rem;
   border-radius: var(--spacing-25);
   overflow: hidden;
 
@@ -362,7 +368,9 @@ ol {
   display: flex;
   flex-direction: column;
   background-color: var(--color-light);
+  min-width: 40rem;
   height: 68vh;
+  min-height: 68rem;
   border-radius: var(--spacing-25);
   padding: 4rem;
   overflow: hidden;
@@ -417,9 +425,8 @@ ol {
   }
 }
 .btn-desafios{
-  position: relative;
   left: 49rem;
-  width: 30%;
+  width: 50%;
   height: 5vh;
   border-radius: var(--spacing-25);
   background-color: var(--color-blue);
@@ -607,6 +614,7 @@ footer{
 
   .arbusto-baixo {
     height: 29vh;
+
   }
 
   .card-acao {
