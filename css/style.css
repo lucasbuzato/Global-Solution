@@ -741,6 +741,12 @@ footer{
   .header-hero {
     justify-content: center;
   }
+  .forms-content{
+    flex-wrap: wrap;
+  }
+  .passarinho{
+  height: 15vh;
+  }
   .quiz{
     min-width: 30rem;
     min-height: 75rem;
